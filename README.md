@@ -6,21 +6,33 @@ Se encarga de 3 cosas.
 - Traducir el Response
 
 
-.
+```
+go2music
 ├── cmd
 │   └── api
 │       ├── handlers
 │       │       └── user
 │       │           └── create.go
+│       │           └── handler.go
 │       ├── main.go
 │       └── tmp
-├── go.mod
-├── go.sum
 ├── internal
 │       ├── domain
 │       │       └── user.go
+│       ├── ports
+│       │       └── user.go
+│       ├── repositories
+│       │       └── postgres
+│       │           ├── user
+│       │           │    └── insert.go
+│       │           │    └── repository.go
+│       │           └── connect_client.go
 │       └── services
 │               └── user
-│                   └── create.go
+│                   ├── create.go
+│                   └── service.go
+├── go.mod
+├── go.sum
 ├── LICENSE
 └── README.md
+```
