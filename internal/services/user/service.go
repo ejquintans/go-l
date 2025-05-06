@@ -1,9 +1,9 @@
 package user
 
 import (
-	"github.com/ejquintans/go-l/internal/ports"
+	portsid "github.com/ejquintans/go-l/internal/ports"
 )
 
 type Service struct {
-	Repo ports.UserRepository
+	Repo portsid.UserRepository
 }

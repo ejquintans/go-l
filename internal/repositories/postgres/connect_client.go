@@ -40,12 +40,10 @@ func ConnectCLient(dbURI string) (client *pgxpool.Pool, err error) {
 }
 
 func GetDBURI() string {
-	return fmt.Sprintf(
-		"postgres://%s:%s@%s:%s/%s?sslmode=disable",
-		os.Getenv("DB_USER"),
-		os.Getenv("DB_PASSWORD"),
-		os.Getenv("DB_HOST"),
-		os.Getenv("DB_PORT"),
-		os.Getenv("DB_NAME"),
-	)
+	uri := os.Getenv("DATABASE_URL")
+	if uri == "" {
+		log.Println("DATABASE_URL no está definida. Verificá la configuración.")
+	}
+	fmt.Println(uri)
+	return uri
 }

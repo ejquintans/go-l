@@ -1,7 +1,7 @@
 package user
 
-import "github.com/ejquintans/go-l/internal/ports"
+import portsid "github.com/ejquintans/go-l/internal/ports"
 
 type UserHandler struct {
-	UserService ports.UserService
+	UserService portsid.UserService
 }

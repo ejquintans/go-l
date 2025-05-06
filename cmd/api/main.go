@@ -12,10 +12,10 @@ import (
 )
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found, using environment variables")
 	}
+
 	ginEngine := gin.Default()
 	dbURI := postgres.GetDBURI()
 
@@ -39,5 +39,5 @@ func main() {
 
 	ginEngine.POST("/users", userHandler.CreateUser)
 
-	log.Println(ginEngine.Run(":8001"))
+	log.Println(ginEngine.Run(":8080"))
 }
